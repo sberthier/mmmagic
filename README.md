@@ -108,3 +108,17 @@ Magic methods
 * **detectFile**(< _String_ >path, < _Function_ >callback) - _(void)_ - Inspects the file pointed at by path. The callback receives two arguments: an < _Error_ > object in case of error (null otherwise), and a < _String_ > containing the result of the inspection.
 
 * **detect**(< _Buffer_ >data, < _Function_ >callback) - _(void)_ - Inspects the contents of data. The callback receives two arguments: an < _Error_ > object in case of error (null otherwise), and a < _String_ > containing the result of the inspection.
+
+
+Prebuild-install
+----------------
+
+- Faire un github token si pas déjà fait https://github.com/prebuild/prebuild#create-github-token
+- En cas de fork, pensez a maj l'url du registry git dans le package.json
+
+```
+npm i -g prebuild
+npm version
+prebuild -t 10.0.0 -t 12.0.0 -r node -u <token>
+npm publish
+```
